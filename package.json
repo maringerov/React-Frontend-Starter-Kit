@@ -1,0 +1,23 @@
+{
+  "name": "sekwoia.com",
+  "version": "1.0.0",
+  "description": "Code for sekwoia.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maringerov/sekwoia.com.git"
+  },
+  "keywords": [
+    "sekwoia.com",
+    "website"
+  ],
+  "author": "Marin Gerov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maringerov/sekwoia.com/issues"
+  },
+  "homepage": "https://github.com/maringerov/sekwoia.com#readme"
+}

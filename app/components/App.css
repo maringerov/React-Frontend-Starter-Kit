@@ -1,0 +1,11 @@
+.row {
+  lost-utility: clearfix;
+}
+
+.quarter {
+  lost-column: 1/4 0;
+}
+
+.half {
+  lost-column: 1/2 0;
+}

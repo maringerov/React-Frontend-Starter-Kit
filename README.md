@@ -1,7 +1,22 @@
-# Code for [sekwoia.com](http://sekwoia.com)
+# React Starter Frontend Kit
 
-In this repository is the code we use to build our website.
+A starter kit for efficient, fast and modern React frontend development.
 
-To get in touch, please send us an email to [contact@sekwoia.com](mailto:contact@sekwoia.com).
+The project is based on the following technologies:
 
-Thank you!
+- React
+- Webpack
+- Babel
+- PostCSS
+- Lost grid
+- Autoprefixer
+- JSCS
+- stylelint
+- React Hot Loader
+
+In addition, the following configuration files are included to help speed up development across computers:
+- `.editorconfig`
+- '.babelrc'
+- '.eslintrc'
+- '.eslintignore'
+- '.jscs'

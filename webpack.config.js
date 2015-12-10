@@ -3,6 +3,7 @@ var HtmlwebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 var stylelint = require('stylelint');
+var configSuitcss = require('stylelint-config-suitcss');
 var autoprefixer = require('autoprefixer');
 var lost = require('lost');
 
@@ -49,11 +50,7 @@ var common = {
     ]
   },
   postcss: function () {
-    return [stylelint({
-      rules: {
-        'color-hex-case': 2
-      }
-    }), autoprefixer, lost];
+    return [stylelint(configSuitcss), autoprefixer, lost];
   },
   plugins: [
     new HtmlwebpackPlugin({

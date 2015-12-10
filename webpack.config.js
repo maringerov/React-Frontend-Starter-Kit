@@ -29,9 +29,7 @@ var common = {
     browsers: ['ff >= 20', 'ie >= 9', 'safari >= 5.1', 'opera >= 12', 'chrome >=20'],
     compress: true,
     messages: {console: true},
-    import: {
-      plugins:[postcssReporter]
-    }
+    map: false
   },
   module: {
     preLoaders: [
@@ -49,7 +47,7 @@ var common = {
     loaders: [
       {
         test: /\.css$/,
-        loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+        loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!cssnext',
         include: PATHS.app
       },
       {
@@ -61,7 +59,7 @@ var common = {
     ]
   },
   postcss: function () {
-    return [stylelint(configSuitcss), autoprefixer, lost];
+    return [stylelint(configSuitcss), autoprefixer, lost, postcssReporter];
   },
   plugins: [
     new HtmlwebpackPlugin({

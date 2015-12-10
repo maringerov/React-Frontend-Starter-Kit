@@ -16,7 +16,7 @@ The project is based on the following technologies:
 
 In addition, the following configuration files are included to help speed up development across computers:
 - `.editorconfig`
-- '.babelrc'
-- '.eslintrc'
-- '.eslintignore'
-- '.jscs'
+- `.babelrc`
+- `.eslintrc`
+- `.eslintignore`
+- `.jscs`

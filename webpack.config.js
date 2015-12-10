@@ -54,6 +54,7 @@ var common = {
       },
       {
         test: /\.js$/,
+        exclude: /(node_modules)/,
         loader: 'react-hot!babel',
         include: PATHS.app
       }

@@ -6,7 +6,7 @@ export default class App extends Component {
     return (
       <section className={styles.row}>
         <div className={styles.quarter}>1</div>
-        <div className={styles.half}>2</div>
+        <div className={styles.half}>2 column</div>
         <div className={styles.quarter}>3</div>
       </section>
     );

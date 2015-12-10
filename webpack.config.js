@@ -16,7 +16,11 @@ const PATHS = {
 process.env.BABEL_ENV = TARGET;
 
 var common = {
-  entry: PATHS.app,
+  entry: [
+    'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
+    'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
+    PATHS.app
+  ],
   resolve: ['', '.js', '.jsx'],
   module: {
     preLoaders: [
@@ -26,7 +30,7 @@ var common = {
         include: PATHS.app
       },
       {
-        test: /\.jsx?$/,
+        test: /\.js?$/,
         loader: 'eslint!jscs',
         include: PATHS.app
       }
@@ -39,7 +43,7 @@ var common = {
       },
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'react-hot!babel',
         include: PATHS.app
       }
     ]
@@ -53,7 +57,8 @@ var common = {
   },
   plugins: [
     new HtmlwebpackPlugin({
-      title: 'studio by sekwoia'
+      // Replace with the title of your project
+      title: 'React Frontend Starter Kit'
     })
   ]
 };
@@ -66,7 +71,8 @@ if(TARGET === 'start' || !TARGET) {
       hot: true,
       inline: true,
       progress: true,
-      quiet: true,
+      // To mute the output in the console, uncomment the 'quiet' property below
+      // quiet: true,
       // display only errors to reduce the amount of output
       stats: 'errors-only',
 

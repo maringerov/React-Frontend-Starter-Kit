@@ -6,6 +6,8 @@ var stylelint = require('stylelint');
 var configSuitcss = require('stylelint-config-suitcss');
 var autoprefixer = require('autoprefixer');
 var lost = require('lost');
+var cssnext = require('cssnext-loader');
+var postcssReporter = require('postcss-reporter');
 
 const TARGET = process.env.npm_lifecycle_event;
 
@@ -23,6 +25,14 @@ var common = {
     PATHS.app
   ],
   resolve: ['', '.js', '.jsx'],
+  cssnext: {
+    browsers: ['ff >= 20', 'ie >= 9', 'safari >= 5.1', 'opera >= 12', 'chrome >=20'],
+    compress: true,
+    messages: {console: true},
+    import: {
+      plugins:[postcssReporter]
+    }
+  },
   module: {
     preLoaders: [
       {

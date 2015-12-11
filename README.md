@@ -7,7 +7,7 @@ The project is based on the following technologies:
 - Webpack
 - Babel
 - PostCSS
-  cssnext
+- cssnext
 - Lost grid
 - Autoprefixer
 - JSCS

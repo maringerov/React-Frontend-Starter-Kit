@@ -3,10 +3,9 @@ var HtmlwebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 var stylelint = require('stylelint');
+var cssnext = require('postcss-cssnext');
 var configSuitcss = require('stylelint-config-suitcss');
-var autoprefixer = require('autoprefixer');
 var lost = require('lost');
-var cssnext = require('cssnext-loader');
 var postcssReporter = require('postcss-reporter');
 
 const TARGET = process.env.npm_lifecycle_event;
@@ -25,12 +24,6 @@ var common = {
     PATHS.app
   ],
   resolve: ['', '.js', '.jsx'],
-  cssnext: {
-    browsers: ['ff >= 20', 'ie >= 9', 'safari >= 5.1', 'opera >= 12', 'chrome >=20'],
-    compress: true,
-    messages: {console: true},
-    map: false
-  },
   module: {
     preLoaders: [
       {
@@ -47,7 +40,7 @@ var common = {
     loaders: [
       {
         test: /\.css$/,
-        loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!cssnext',
+        loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
         include: PATHS.app
       },
       {
@@ -59,7 +52,7 @@ var common = {
     ]
   },
   postcss: function () {
-    return [stylelint(configSuitcss), autoprefixer, lost, postcssReporter];
+    return [stylelint(configSuitcss), lost, postcssReporter, cssnext];
   },
   plugins: [
     new HtmlwebpackPlugin({

@@ -3,6 +3,7 @@ var HtmlwebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 var stylelint = require('stylelint');
+var cssnext = require('postcss-cssnext');
 var configSuitcss = require('stylelint-config-suitcss');
 var autoprefixer = require('autoprefixer');
 var lost = require('lost');
@@ -52,7 +53,7 @@ var common = {
     ]
   },
   postcss: function () {
-    return [stylelint(configSuitcss), autoprefixer, lost, postcssReporter];
+    return [stylelint(configSuitcss), autoprefixer, lost, postcssReporter, cssnext];
   },
   plugins: [
     new HtmlwebpackPlugin({

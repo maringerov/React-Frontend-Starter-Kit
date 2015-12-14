@@ -5,7 +5,6 @@ var merge = require('webpack-merge');
 var stylelint = require('stylelint');
 var cssnext = require('postcss-cssnext');
 var configSuitcss = require('stylelint-config-suitcss');
-var autoprefixer = require('autoprefixer');
 var lost = require('lost');
 var postcssReporter = require('postcss-reporter');
 
@@ -53,7 +52,7 @@ var common = {
     ]
   },
   postcss: function () {
-    return [stylelint(configSuitcss), autoprefixer, lost, postcssReporter, cssnext];
+    return [stylelint(configSuitcss), lost, postcssReporter, cssnext];
   },
   plugins: [
     new HtmlwebpackPlugin({

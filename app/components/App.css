@@ -7,5 +7,6 @@
 }
 
 .half {
+  filter: blur(1px);
   lost-column: 1/2 0;
 }

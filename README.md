@@ -13,6 +13,7 @@ The project is based on the following technologies:
 - JSCS
 - stylelint
 - React
+- CSS Modules
 - React Hot Loader
 
 In addition, the following configuration files are included to help speed up development across computers:
@@ -26,7 +27,8 @@ Installation instructions (depending on your configuration you might run `npm in
 
 ```
 git clone https://github.com/maringerov/React-Frontend-Starter-Kit.git
-npm install && npm start
+npm install
+npm start
 ```
 
 Then navigate to `http://localhost:8080/` to see the starter template.
